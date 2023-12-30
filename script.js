@@ -1,3 +1,4 @@
+// Functions
 function getComputerChoice() {
     const choices = ['Rock', 'Paper', 'Scissor'];
     const randomNumber = Math.floor(Math.random() * 3);
@@ -40,3 +41,46 @@ function playRound(playerSelection, computerSelection) {
         }
     } 
 }
+
+// Event listeners
+const options = document.querySelectorAll(".options button");
+const playerScoreHolder = document.querySelector("#player-score p");
+const computerScoreHolder = document.querySelector("#computer-score p");
+const message = document.querySelector("#message");
+const gameResult = document.querySelector("#result");
+
+let playerScore = 0;
+let computerScore = 0;
+let rounds = 0;
+
+options.forEach((option) => {
+    option.addEventListener('click', function(e) {
+        if (rounds <5) {
+            let computerSelection = getComputerChoice();
+            result = playRound(option.id, computerSelection);
+            message.textContent = result;
+            if (result[4] == 'W') {
+                playerScore += 1;
+                playerScoreHolder.textContent = playerScore;
+                rounds += 1;
+            }
+            else if (result[4] == 'l') {
+                computerScore += 1;
+                computerScoreHolder.textContent = computerScore;
+                rounds += 1;
+            }
+            else {
+                console.log("Draw");
+                rounds += 1;
+            }
+        } 
+        else {
+            if (playerScore > computerScore) {
+                gameResult.textContent = "You won the game!";
+            } else {
+                gameResult.textContent = "You lost the game!"
+            }
+        }
+    })
+})
+
