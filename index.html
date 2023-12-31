@@ -4,29 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
     <title>Rock, paper, scissor</title>
 </head>
 <body>
-    <div id="results">
-        <div id="result"></div>
-        <div id="player-score">
-            <h6>You</h6>
-            <p>0</p>
+    <main>
+        <h1>Rock, paper, scissor?</h1>
+        <div id="scores">
+            <div id="player-score">
+                <img src="assets/Lily.png" alt="">
+                <p class="handle"><b>You: </b><span>0</span></p>
+            </div>
+            <img id="fighiting-avatar" src="assets/fighting.png" alt="">
+            <div id="computer-score">
+                <img src="assets/Computer.png" alt="">
+                <p class="handle"><b>Computer: </b><span>0</span></p>
+            </div>
         </div>
-        <div id="computer-score">
-            <h6>Computer</h6>
-            <p>0</p>
+        <div id="ball-options">
+            <button id="Rock">
+                <img src="assets/rock.png" alt="">
+            </button>
+            <button id="Paper">
+                <img src="assets/paper.png" alt="">
+            </button>
+            <button id="Scissors">
+                <img src="assets/scissors.png" alt="">
+            </button>
         </div>
-    </div>
-    <div class="options">
-        <button id="Rock">Rock</button>
-        <button id="Paper">Paper</button>
-        <button id="Scissor">Scissor</button>
-    </div>
-    <div id="message"></div>
-    <div id="help">
-        <button>Rules</button>
-        <button>Unmute</button>
-    </div>
+        <p id="message">Let's get started!</p>
+        <button id="replay">Replay</button>
+    </main>
 </body>
 </html>
